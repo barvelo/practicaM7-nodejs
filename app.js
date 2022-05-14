@@ -15,7 +15,6 @@ function isAuthorized(req,res, next) {
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-
 app.get('/users', isAuthorized, async (req,res) => {
     const users = await User.findAll();
     res.json(users);
